@@ -1,56 +1,60 @@
-# Teste-tecnico-Autoflex
-TESTE PRÁTICO
 
-Descrição do problema:
+# Teste Técnico Autoflex
 
-Uma indústria que produz produtos diversos, necessita controlar o estoque dos insumos (matérias-primas) necessárias para a produção dos itens que fabrica. Para isso será necessário o desenvolvimento de um sistema que permita manter o controle dos produtos e das matérias-primas que são utilizadas para a produção de cada produto.
+## Descrição do Problema
 
-Para o produto devem ser armazenados, além do código, o nome e o valor.
+Uma indústria precisa controlar o estoque de insumos (matérias-primas) para a produção dos itens que fabrica. Para isso, será necessário desenvolver um sistema que permita:
 
-Para as matérias-primas, além do código, também devem armazenados o nome e quantidade em estoque. Obviamente, deverá ser feito a associação dos produtos e das matérias primas que o compõem, com as respectivas quantidades necessárias de cada matéria prima para produzir o produto.
+- Manter o controle dos **produtos** e das **matérias-primas** utilizadas em cada produto.
+- Armazenar para cada produto: **código**, **nome** e **valor**.
+- Armazenar para cada matéria-prima: **código**, **nome** e **quantidade em estoque**.
+- Associar produtos às matérias-primas que os compõem, incluindo a quantidade de cada matéria-prima necessária para produzir o produto.
+- Consultar quais produtos (e quantas unidades) podem ser produzidos com o estoque atual de matérias-primas, e o valor total obtido com a produção sugerida.
+- Priorizar a produção dos produtos de **maior valor**, já que uma matéria-prima pode ser usada em mais de um produto.
 
-Além da manutenção dos cadastros, deseja-se saber quais produtos (e quais quantidades) podem ser produzidos com as matérias-primas em estoque, e o valor total que será obtido com a produção sugerida pelo sistema.
+---
 
-A priorização de quais produtos devem ser sugeridos pelo sistema, deve ser pelos produtos de maior valor, uma vez que uma determinada matéria-prima pode ser utilizada em mais de um produto.
+## Requisitos
 
-Requisitos:
+### Requisitos Não Funcionais
 
-- Requisitos não funcionais
+- **RNF001:** O sistema deve ser desenvolvido para plataforma **WEB**, compatível com Chrome, Firefox e Edge.
+- **RNF002:** O sistema deve ser construído em arquitetura **API** (back-end separado do front-end).
+- **RNF003:** O front-end deve ser **responsivo**.
+- **RNF004:** Persistência de dados em SGBD: **Postgres**, **MySQL** ou **Oracle** (preferencialmente Oracle, se disponível).
+- **RNF005:** O back-end (API) deve ser desenvolvido com framework como **Spring**, **Quarkus** ou similar (preferencialmente Quarkus).
+- **RNF006:** O front-end pode ser desenvolvido com qualquer linguagem/framework, preferencialmente **React** e **Redux**.
+- **RNF007:** Toda a codificação (back-end, front-end, tabelas e colunas do banco) deve ser feita em **inglês**.
 
-RNF001 – O sistema deverá ser desenvolvido para a plataforma WEB, sendo possível a execução nos principais navegadores (Chrome, Firefox, Edge).
+### Requisitos Funcionais
 
-RNF002 – O sistema deverá ser construído utilizando o conceito de API, ou seja, separar o back-end do front-end.
+- **RF001:** CRUD de produtos no back-end.
+- **RF002:** CRUD de matérias-primas no back-end.
+- **RF003:** CRUD de associação entre produtos e matérias-primas no back-end.
+- **RF004:** Consulta dos produtos que podem ser produzidos com o estoque atual de matérias-primas (back-end).
+- **RF005:** CRUD de produtos no front-end.
+- **RF006:** CRUD de matérias-primas no front-end.
+- **RF007:** CRUD de associação entre produtos e matérias-primas no front-end (pode ser integrado à tela de produtos).
+- **RF008:** Listagem dos produtos (e quantidades) que podem ser produzidos com o estoque atual de matérias-primas (front-end).
 
-RNF003 – As telas desenvolvidas no front-end devem utilizar os recursos de responsividade.
+---
 
-RNF004 – A persistência de dados deve ser realizada em Sistema Gerenciador de Banco de Dados, com a possibilidade de utilizar Postgres, MySql ou Oracle. Caso tenha instalado o Oracle, a sugestão é utilizá-lo.
+## Desejável
 
-RNF005 – O back-end (API) deve ser desenvolvido utilizando algum framework, como Spring, Quarkus ou similar. Caso você conheça Quarkus, a sugestão é que aplique já que é uma das tecnologias utilizadas no Autoflex.
+- Desenvolvimento de **testes unitários** para back-end e front-end.
+- Desenvolvimento de **testes de integração** (preferencialmente com **Cypress**).
 
-RNF006 – O front-end pode ser desenvolvido utilizando qualquer linguagem ou framework que possibilite o atendimento dos requisitos. Caso você conheça React e Redux, a sugestão é que aplique já que são tecnologias utilizadas no Autoflex.
+---
 
-RNF007 – Tanto a codificação do back-end, front-end, tabelas e colunas do banco de dados devem ser desenvolvidas utilizando a língua inglesa.
+## Checklist de Implementação
 
-- Requisitos funcionais
-
-RF001 – Desenvolver no back-end as funcionalidades CRUD para manter o cadastro de produtos.
-
-RF002 – Desenvolver no back-end as funcionalidades CRUD para manter o cadastro de matérias primas.
-
-RF003 – Desenvolver no back-end as funcionalidades CRUD para associar matérias-primas aos produtos.
-
-RF004 – Desenvolver no back-end as funcionalidades para a consulta dos produtos que podem ser produzidos com as matérias-primas disponíveis em estoque.
-
-RF005 – Desenvolver no front-end uma interface gráfica que possibilite realizar as operações CRUD para manter o cadastro de produtos.
-
-RF006 – Desenvolver no front-end uma interface gráfica que possibilite realizar as operações CRUD para manter o cadastro de matérias primas.
-
-RF007 – Desenvolver no front-end uma interface gráfica que possibilite realizar as operações CRUD para associar matérias-primas aos produtos. Não há a necessidade de ser uma tela separada, podendo ser inserida a interface no cadastro de produtos.
-
-RF008 – Desenvolver no front-end uma interface gráfica que possibilite listar quais produtos (e quais quantidades) podem ser produzidos com as matérias-primas disponíveis em estoque.
-
-Desejável:
-
-- Desenvolvimento de testes unitários para o back-end e para o front-end
-
-- Desenvolvimento de testes de integração. Caso tenha conhecimento da tecnologia Cypress, a sugestão é utilizá-la já que utilizamos no Autoflex.
+- [ ] CRUD de produtos (back-end)
+- [ ] CRUD de matérias-primas (back-end)
+- [ ] CRUD de associação produto/matéria-prima (back-end)
+- [ ] Consulta de produção possível (back-end)
+- [ ] CRUD de produtos (front-end)
+- [ ] CRUD de matérias-primas (front-end)
+- [ ] CRUD de associação produto/matéria-prima (front-end)
+- [ ] Listagem de produção possível (front-end)
+- [ ] Testes unitários
+- [ ] Testes de integração
